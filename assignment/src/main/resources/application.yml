@@ -35,5 +35,5 @@ logging:
 auth:
   jwt:
     issuer: com.sparta
-    secret: sldjfnljsdhf109herhr810ntn
+    secret: sldjfnljsdhf109herhr810ntnekjf1jd
     accessTokenExpirationHour: 168

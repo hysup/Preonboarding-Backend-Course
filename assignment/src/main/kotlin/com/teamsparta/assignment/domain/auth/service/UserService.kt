@@ -34,10 +34,12 @@ class UserService(
 
 
     fun login(request: LoginRequest): LoginResponse {
-        val user = userRepository.findByEmail(request.email)
-        if (user == null ||!passwordEncoder.matches(request.password, user.password)) {
+        val user = userRepository.findByEmail(request.email) ?: throw IllegalArgumentException("User not found")
+
+        if (!passwordEncoder.matches(request.password, user.password)) {
             throw IllegalArgumentException("User password invalid")
         }
+
         return LoginResponse(
             accessToken = jwtPlugin.generateAccessToken(
                 subject = user.id.toString(),
