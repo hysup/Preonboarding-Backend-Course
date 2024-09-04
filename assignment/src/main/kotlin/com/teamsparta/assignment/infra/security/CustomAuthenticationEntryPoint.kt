@@ -1,4 +1,4 @@
-package com.highv.ecommerce.infra.security
+package com.teamsparta.assignment.infra.security
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.teamsparta.assignment.common.exception.dto.ErrorResponse
